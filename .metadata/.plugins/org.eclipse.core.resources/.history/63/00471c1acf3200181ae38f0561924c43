@@ -15,7 +15,7 @@ public class IsUnique {
 	 * @param s
 	 * @return true/false
 	 */
-	public boolean hasOnlyUniqueCharacters(String s) {
+	boolean hasOnlyUniqueCharacters(String s) {
 		HashSet<Character> hS = new HashSet<Character>();
 		
 		for(char c : s.toCharArray()){
