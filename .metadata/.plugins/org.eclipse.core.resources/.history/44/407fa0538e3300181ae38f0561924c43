@@ -52,8 +52,7 @@ public class OneAway {
 				} else {
 					return false;
 				}				
-			}
-			return true;
+			}			
 		} 
 		
 		if(iS1.length() < iS2.length()){
@@ -67,11 +66,11 @@ public class OneAway {
 				if((s1Arr[i] != s2Arr[j]) && (singleInsertion == false)){
 					j++;
 					singleInsertion = true;
-				} else if(singleInsertion == true){
+				} else {
 					return false;
 				}
 			}
-			return true;
+			
 		}
 		
 		if(iS2.length() < iS1.length()){
@@ -85,15 +84,12 @@ public class OneAway {
 				if((s2Arr[i] != s1Arr[j]) && (singleInsertion == false)){
 					j++;
 					singleInsertion = true;
-				} else if (singleInsertion == true){
+				} else {
 					return false;
 				}
 			}
-			
-			return true;
-			
 		}
-		
+
 		return true;
 	}
 }
