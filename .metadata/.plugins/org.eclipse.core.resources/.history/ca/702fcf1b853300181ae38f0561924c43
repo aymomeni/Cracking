@@ -12,11 +12,6 @@ import java.util.HashMap;
 public class PalindromePermutation {
 
 	/**
-	 * My idea behind this code is that a palindrome should only have either all even numbered
-	 * characters or it should only have a single character that is odd. If there is more than 
-	 * a single odd numbered character symetry can't be achieved.
-	 */
-	/**
 	 * Checks if any permutation of the input string is a palindrome
 	 * @param s
 	 * @return
