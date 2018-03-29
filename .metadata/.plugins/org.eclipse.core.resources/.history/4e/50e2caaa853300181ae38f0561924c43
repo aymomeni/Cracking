@@ -75,7 +75,7 @@ public class PalindromePermutationTests {
 	public void test8() {
 		PalindromePermutation pP = new PalindromePermutation();
 		
-		boolean b = pP.isPalindromePermutation("Step on no petsni");
+		boolean b = pP.isPalindromePermutation("Step on no petsn");
 		
 		assertEquals(false, b);
 	}
