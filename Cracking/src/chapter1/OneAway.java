@@ -44,12 +44,12 @@ public class OneAway {
 			char[] s1Arr = iS1.toCharArray();
 			char[] s2Arr = iS2.toCharArray();
 			
-			for(int i = 0; i < s2Arr.length; i++) {
+			for(int i = 0, j = 0; i < s2Arr.length; i++, j++) {
 				
 				if((s1Arr[i] != s2Arr[i]) && (singleReplacement == false)){
 					s1Arr[i] = s2Arr[i];
 					singleReplacement = true;
-				} else {
+				} else if(s2Arr[i] != s1Arr[j] && singleReplacement == true) {
 					return false;
 				}				
 			}
@@ -65,9 +65,9 @@ public class OneAway {
 			for(int i = 0, j = 0; i < s1Arr.length; i++, j++){
 				
 				if((s1Arr[i] != s2Arr[j]) && (singleInsertion == false)){
-					j++;
+					i--;
 					singleInsertion = true;
-				} else if(singleInsertion == true){
+				} else if(s2Arr[i] != s1Arr[j] && singleInsertion == true){
 					return false;
 				}
 			}
@@ -83,9 +83,10 @@ public class OneAway {
 			for(int i = 0, j = 0; i < s2Arr.length; i++, j++){
 				
 				if((s2Arr[i] != s1Arr[j]) && (singleInsertion == false)){
-					j++;
+					i--;
 					singleInsertion = true;
-				} else if (singleInsertion == true){
+					
+				} else if (s2Arr[i] != s1Arr[j] && singleInsertion == true){
 					return false;
 				}
 			}

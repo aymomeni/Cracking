@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="OneAwayTests" project="Cracking" tests="12" started="12" failures="0" errors="0" ignored="0">
+  <testsuite name="chapter1.Tests.OneAwayTests" time="0.001">
+    <testcase name="test10" classname="chapter1.Tests.OneAwayTests" time="0.0"/>
+    <testcase name="test11" classname="chapter1.Tests.OneAwayTests" time="0.001"/>
+    <testcase name="test12" classname="chapter1.Tests.OneAwayTests" time="0.0"/>
+    <testcase name="test1" classname="chapter1.Tests.OneAwayTests" time="0.0"/>
+    <testcase name="test2" classname="chapter1.Tests.OneAwayTests" time="0.0"/>
+    <testcase name="test3" classname="chapter1.Tests.OneAwayTests" time="0.0"/>
+    <testcase name="test4" classname="chapter1.Tests.OneAwayTests" time="0.0"/>
+    <testcase name="test5" classname="chapter1.Tests.OneAwayTests" time="0.0"/>
+    <testcase name="test6" classname="chapter1.Tests.OneAwayTests" time="0.0"/>
+    <testcase name="test7" classname="chapter1.Tests.OneAwayTests" time="0.0"/>
+    <testcase name="test8" classname="chapter1.Tests.OneAwayTests" time="0.0"/>
+    <testcase name="test9" classname="chapter1.Tests.OneAwayTests" time="0.0"/>
+  </testsuite>
+</testrun>
