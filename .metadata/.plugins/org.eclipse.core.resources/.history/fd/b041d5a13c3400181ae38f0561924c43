@@ -1,0 +1,41 @@
+package chapter1;
+
+import java.util.HashMap;
+
+/**
+ * Implement a method to perform basic string compression using
+ * the counts of repeated characters. E.g. the string aabcccccaaa would become
+ * a2b1c5a3 if the compressed string would not become smaller than the original string your method
+ * should return the original string. You can assume the string has only uppercase and lower case 
+ * letters (a-z)
+ * @author Momeni
+ *
+ */
+public class StringCompression {
+
+	public String stringCompress(String s){
+		
+		StringBuilder sB = new StringBuilder();
+		char[] inputCharArr = s.toCharArray();
+		
+		for(int i = 0; i < inputCharArr.length; i++){
+			char prev = inputCharArr[i];
+			int count = 1;
+			
+			for(int j = i + 1; j < inputCharArr.length; j++){
+				
+				if(prev == inputCharArr[j]) {
+					count++;
+				} else {
+					sB.append(prev);
+					sB.append(count);
+					break;
+				}
+			}
+			
+		}
+				
+		return sB.toString();
+	}
+	
+}

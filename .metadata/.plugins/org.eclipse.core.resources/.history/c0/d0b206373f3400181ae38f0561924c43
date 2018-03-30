@@ -1,0 +1,24 @@
+package chapter1.Tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import chapter1.StringCompression;
+
+public class StringCompressionTests {
+
+	@Test
+	public void test() {
+		StringCompression sC = new StringCompression();
+		String temp = sC.stringCompress("aabcccccaaa");
+		assertEquals("a2b1c5a3", temp);
+	}
+	
+	public void test2() {
+		StringCompression sC = new StringCompression();
+		String temp = sC.stringCompress("aaaaaaaa");
+		assertEquals("a8", temp);
+	}
+
+}
