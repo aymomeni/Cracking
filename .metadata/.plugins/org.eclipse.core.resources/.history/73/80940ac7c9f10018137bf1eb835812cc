@@ -19,10 +19,10 @@ public class IsUnique {
 		
 		boolean[] hS = new boolean[128];
 		
-		for(char c : s.toLowerCase().toCharArray()){
+		for(char c : s.toCharArray()){
 			
-			if(!hS[(int)c]){
-				hS[(int)c] = true;
+			if(hS[(int)c]){
+				hS[(int)c] = false;
 			} else {
 				return false;
 			}
