@@ -29,9 +29,9 @@ public class StringRotation {
 		
 		for(String s : list){
 			System.out.println(s);
-//			if(s.equals(s2)){
-//				return true;
-//			}
+			if(s.equals(s2)){
+				return true;
+			}
 		}
 		return false;
 		
