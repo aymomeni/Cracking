@@ -1,6 +1,5 @@
 package chapter2;
 
-/* Simple singly linked list */
 public class Node {
 	public Node next = null;
 	public int data;

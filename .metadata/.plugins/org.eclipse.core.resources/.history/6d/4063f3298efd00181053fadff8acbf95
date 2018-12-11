@@ -32,8 +32,4 @@ public class RemoveDups {
 			curr = curr.next;
 		}		
 	}
-	
-	// NOTE TO SELF: doesn't need curr.next != null checks
-	// also only one runner is necessary as runner.next.data can be used to check the next
-	// values data to curr.data. if they are equal runner.next = runner.next.next, genius
 }

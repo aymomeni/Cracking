@@ -1,0 +1,24 @@
+package chapter2;
+
+public class KthToLast {
+
+	public Node kThToLast(Node head, int k){
+		
+		Node current = head;
+		Node kthNode = head;
+		int count = 0; // one or zero based?
+		
+		while(current != null){
+			current = current.next;
+			
+			
+			if(count != k){
+				count++;
+			} else {
+				kthNode = kthNode.next;
+			}
+		}
+
+		return count == k ? kthNode : null;
+	}
+}
