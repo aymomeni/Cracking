@@ -28,18 +28,18 @@ public class RotateMatrix {
 				matrix[level][i] = bottomLeft; // set topLeft to bottomLeft
 				matrix[i][n-1-level] = topLeft; // set topRight to topLeft
 				matrix[n-1-level][n-1-i] = topRight; // set bottomRight to topRight
-				matrix[n-1-i][level] = bottomRight; // set 
+				matrix[n-1-i][level] = bottomRight; // set bottomLeft to bottomRight
 			}
 			
 		}
 		
-		for(int i = 0; i < matrix.length; i++){
-			for(int j = 0; j < matrix.length; j++){
-				System.out.print(matrix[i][j] + " ");
-			}
-			System.out.println();
-		}
-		
+//		for(int i = 0; i < matrix.length; i++){
+//			for(int j = 0; j < matrix.length; j++){
+//				System.out.print(matrix[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
+//		
 		return matrix;
 	}
 	

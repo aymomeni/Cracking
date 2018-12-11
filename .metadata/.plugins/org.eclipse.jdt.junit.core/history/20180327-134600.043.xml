@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="IsUniqueTests" project="Cracking" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="chapter1.IsUniqueTests" time="0.0">
-    <testcase name="test1" classname="chapter1.IsUniqueTests" time="0.0"/>
-    <testcase name="test2" classname="chapter1.IsUniqueTests" time="0.0"/>
-  </testsuite>
-</testrun>
