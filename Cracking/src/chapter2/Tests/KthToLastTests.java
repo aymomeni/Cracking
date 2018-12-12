@@ -27,7 +27,6 @@ public class KthToLastTests {
 		
 		Node res = k.kThToLast(list, 5);
 
-		System.out.println(res.data);
 		Assert.assertEquals(5, res.data);
 	}
 	
