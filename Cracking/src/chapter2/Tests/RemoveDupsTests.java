@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-import chapter2.Node;
+import chapter2.ListNode;
 import chapter2.RemoveDups;
 
 public class RemoveDupsTests {
@@ -13,7 +13,7 @@ public class RemoveDupsTests {
 	@Test
 	public void test() {
 		
-		Node list = new Node(0);
+		ListNode list = new ListNode(0);
 		
 		int[] arr = new int[]{ 1, 2, 2, 3, 4, 5, 5, 6, 7, 7, 7};
 		
@@ -21,7 +21,7 @@ public class RemoveDupsTests {
 			list.appendToTail(arr[i]);
 		}
 		
-		Node head = list;
+		ListNode head = list;
 		while(list != null){
 			System.out.print(list.data + " ");
 			list = list.next;
@@ -31,7 +31,7 @@ public class RemoveDupsTests {
 		
 		RemoveDups rm = new RemoveDups();
 		
-		Node head2 = head;
+		ListNode head2 = head;
 		rm.removeDups(head2);
 		
 		int i = 0;

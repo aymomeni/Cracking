@@ -7,14 +7,14 @@ import org.junit.Test;
 
 import chapter2.DeleteMiddleNode;
 import chapter2.KthToLast;
-import chapter2.Node;
+import chapter2.ListNode;
 
 public class DeleteMiddleNodeTests {
 
 	@Test
 	public void test() {
 			
-		Node list = new Node(0);
+		ListNode list = new ListNode(0);
 			
 		int[] arr = new int[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 			
@@ -44,7 +44,7 @@ public class DeleteMiddleNodeTests {
 	@Test
 	public void test2() {
 			
-		Node list = new Node(1);
+		ListNode list = new ListNode(1);
 			
 		int[] arr = new int[]{ 2, 3};
 			

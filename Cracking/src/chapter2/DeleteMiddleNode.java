@@ -2,16 +2,18 @@ package chapter2;
 
 public class DeleteMiddleNode {
 
-	public void deleteMiddleNode(Node head){
+	public void deleteMiddleNode(ListNode head){
 		
-		Node runner = head;
-		Node current = head;
+		ListNode runner = head;
+		ListNode current = head;
 		
 		int nodeCount = 1;
 		
 		while(current != null){
 			current = current.next;
-			nodeCount++;
+			if(current != null){
+				nodeCount++;
+			}			
 		}
 		
 		int index = 0;

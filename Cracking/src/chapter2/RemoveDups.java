@@ -5,15 +5,15 @@ public class RemoveDups {
 	/*
 	 * removing duplicates from singly linked list without extra space (eg set)
 	 */
-	public void removeDups(Node head){
+	public void removeDups(ListNode head){
 		
-		Node curr = head;
-		Node runnerPrev;
+		ListNode curr = head;
+		ListNode runnerPrev;
 		
 		
 		while(curr != null && curr.next != null){
 			
-			Node runner = curr.next;
+			ListNode runner = curr.next;
 			runnerPrev = curr;
 			
 			while(runner != null && runner.next != null){

@@ -2,10 +2,10 @@ package chapter2;
 
 public class KthToLast {
 
-	public Node kThToLast(Node head, int k) {
+	public ListNode kThToLast(ListNode head, int k) {
 		
-		Node current = head;
-		Node kthNode = null;
+		ListNode current = head;
+		ListNode kthNode = null;
 		int count = 0; // one or zero based?
 		
 		while(current != null) {
