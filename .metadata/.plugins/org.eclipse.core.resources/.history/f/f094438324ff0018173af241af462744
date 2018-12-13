@@ -1,0 +1,37 @@
+package chapter2.Tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import chapter2.ListNode;
+import chapter2.SumOfLists;
+
+public class SumOfListsTests {
+
+	@Test
+	public void test1() {
+		
+		int[] val1Ar = {7, 1, 6};
+		int[] val2Ar = {5, 9, 2};
+		
+		ListNode l1 = new ListNode(7);
+		ListNode l2 = new ListNode(5);
+		
+		l1.appendToTail(1);
+		l1.appendToTail(6);
+		l2.appendToTail(9);
+		l2.appendToTail(5);
+		
+		SumOfLists s = new SumOfLists();
+		ListNode l = s.sumOfLists(l1, l2);
+		
+		while(l != null){
+			System.out.println(l.data);
+			l = l.next;
+		}
+		
+		
+	}
+
+}

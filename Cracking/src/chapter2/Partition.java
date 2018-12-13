@@ -5,12 +5,11 @@ public class Partition {
 
 	
 	public ListNode partition(ListNode head, int x) {
-        // only for constructor of retList
+   
 		ListNode itrSmaller = head;
         ListNode itrLarger = head;
-		ListNode retList = new ListNode(Integer.MIN_VALUE);
+		ListNode retList = new ListNode(Integer.MIN_VALUE); // temp value that will be deleted later
         ListNode retHead = retList;
-		boolean firstTime = false;
 				
 		while(itrSmaller != null){
 			if(itrSmaller.data < x){
