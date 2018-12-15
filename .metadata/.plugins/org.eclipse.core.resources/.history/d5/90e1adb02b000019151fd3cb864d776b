@@ -1,0 +1,45 @@
+package chapter2.Tests;
+
+import junit.framework.Assert;
+
+import org.junit.Test;
+
+import chapter2.ListNode;
+import chapter2.Palindrome;
+
+public class PalindromeTests {
+
+	@SuppressWarnings("deprecation")
+	@Test
+	public void test(){
+		
+		Palindrome p = new Palindrome();
+		
+		int[] arr = {1, 2, 3, 4, 5, 5, 4, 3, 2, 1};
+		
+		ListNode lN = new ListNode(arr[0]);
+		for(int i = 1; i < arr.length; i++){
+			lN.appendToTail(i);
+			lN = lN.next;
+		}
+		
+		Assert.assertTrue(p.isPalindrome(lN));
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void test1(){
+		
+		Palindrome p = new Palindrome();
+		
+		int[] arr = {1, 2, 3, 4, 5, 5, 4,3, 2};
+		
+		ListNode head;
+		ListNode lN = new ListNode(arr[0]);
+		head = lN;
+		for(int i = 1; i < arr.length; i++){
+			lN.appendToTail(arr[i]);
+		}
+		Assert.assertFalse(p.isPalindrome(head));
+	}
+}

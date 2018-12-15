@@ -1,0 +1,48 @@
+package chapter2;
+
+public class Palindrome {
+
+public boolean isPalindrome(ListNode list){
+		
+		if(list == null){
+			return false;
+		}
+		
+		int listItemCount = 1;
+		
+		ListNode researcher = list;
+		
+		while(researcher.next != null){
+			
+			researcher = researcher.next;
+			listItemCount++;
+		}
+		
+		if(listItemCount == 1){			
+			return true;			
+		} else if(list.data != researcher.data){
+			return false;
+		}
+		
+		ListNode leftComparer = list;
+		for(int i = 0 ; i <= (listItemCount%2==1? (listItemCount/2)-1:listItemCount/2); i++){
+			if(leftComparer.data == researcher.data){
+				leftComparer = leftComparer.next;
+				researcher = null;
+				researcher = leftComparer;
+				
+				while(researcher.next != null){
+					researcher = researcher.next;
+				}
+				if(i == (listItemCount%2==1? (listItemCount/2)-1:listItemCount/2)){
+					return true;
+				}
+			} else {
+				return false;
+			}
+		}
+		
+		
+		return false;
+	}
+}
