@@ -1,0 +1,30 @@
+package chapter3.Tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import chapter3.SortStack;
+
+public class SortStackTests {
+
+	@Test
+	public void test() {
+		SortStack ss = new SortStack();
+		
+		ss.push(5);
+		ss.push(4);
+		ss.push(3);
+		ss.push(2);
+		ss.push(1);
+		
+		ss.sort();
+		
+		for(int i = 0; i < 5; i++){
+			System.out.print(ss.peek() + " ");
+			ss.pop();
+		}
+	}
+
+}
+
