@@ -92,9 +92,6 @@ public class SortStackTests {
 		ss.sort();
 		
 		for(int i = 0; i < 100; i++){
-			if(!set.contains(i)){
-				System.out.println(i);
-			}
 			System.out.print(ss.peek() + " ");
 			assertEquals((int)correctVals[i], ss.pop());
 		}

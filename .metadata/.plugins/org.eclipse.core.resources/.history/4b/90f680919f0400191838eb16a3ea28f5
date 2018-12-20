@@ -72,7 +72,7 @@ public class SortStackTests {
 	@Test
 	public void test4() {
 		SortStack ss = new SortStack();
-		Integer[] correctVals = new Integer[100];
+		Integer[] correctVals = new Integer[10];
 		HashSet<Integer> set = new HashSet<Integer>();
 		
 		for(int i = 0; i < 100; i++){
@@ -92,9 +92,6 @@ public class SortStackTests {
 		ss.sort();
 		
 		for(int i = 0; i < 100; i++){
-			if(!set.contains(i)){
-				System.out.println(i);
-			}
 			System.out.print(ss.peek() + " ");
 			assertEquals((int)correctVals[i], ss.pop());
 		}
