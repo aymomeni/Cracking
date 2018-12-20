@@ -1,0 +1,18 @@
+package chapter3;
+
+public class AnimalShelter {
+
+	
+	
+	public class Dog(){
+		
+	}
+
+	public class Cat(){
+		
+	}
+	
+	
+	
+}
+
