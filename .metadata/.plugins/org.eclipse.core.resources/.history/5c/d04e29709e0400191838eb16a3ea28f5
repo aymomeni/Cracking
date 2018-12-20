@@ -2,8 +2,6 @@ package chapter3.Tests;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 
 import org.junit.Test;
 
@@ -73,25 +71,19 @@ public class SortStackTests {
 	public void test4() {
 		SortStack ss = new SortStack();
 		Integer[] correctVals = new Integer[10];
-		HashSet<Integer> set = new HashSet<Integer>();
+
 		
 		for(int i = 0; i < 10; i++){
-			
-			int val = (int)(Math.random()*100+1);
-			if(set.contains(val)){
-				i--;
-				continue;
-			} 
+			int val = (int)Math.random()*100+1;
 			ss.push(val);
 			correctVals[i] = val;
-			set.add(val);
 			System.out.println(val);
 		}
 		
 		Arrays.sort(correctVals, Collections.reverseOrder());
 		ss.sort();
 		
-		for(int i = 0; i < 10; i++){
+		for(int i = 0; i < 5; i++){
 			System.out.print(ss.peek() + " ");
 			assertEquals((int)correctVals[i], ss.pop());
 		}

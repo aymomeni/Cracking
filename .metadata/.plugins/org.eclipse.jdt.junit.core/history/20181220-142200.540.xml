@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="SortStackTests" project="Cracking" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="chapter3.Tests.SortStackTests" time="0.0">
+    <testcase name="test" classname="chapter3.Tests.SortStackTests" time="0.0"/>
+    <testcase name="test2" classname="chapter3.Tests.SortStackTests" time="0.0"/>
+    <testcase name="test3" classname="chapter3.Tests.SortStackTests" time="0.0"/>
+  </testsuite>
+</testrun>
