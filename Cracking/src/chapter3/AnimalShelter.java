@@ -1,12 +1,15 @@
 package chapter3;
 
-import java.util.Date;
 import java.util.LinkedList;
+import chapter3.Animal;
+
 
 public class AnimalShelter {
 
 	LinkedList<Cat> catList = null;
 	LinkedList<Dog> dogList = null;
+	
+	private static int counter = 1;
 	
 	public AnimalShelter(){
 		catList = new LinkedList<Cat>();
@@ -16,10 +19,10 @@ public class AnimalShelter {
 	public Animal dequeueAny(){
 		
 		if(!dogList.isEmpty() && !catList.isEmpty()){
-			Date dogDate = dogList.getFirst().getDate();
-			Date catDate = catList.getFirst().getDate();
+			int dogPos = dogList.getFirst().getPosition();
+			int catPos = catList.getFirst().getPosition();
 			
-			if(dogDate.before(catDate)){
+			if(dogPos < catPos){
 				return dogList.removeFirst();
 			} else{
 				return catList.removeFirst();
@@ -43,40 +46,17 @@ public class AnimalShelter {
 	
 	public void enqueue(Animal animal){
 		if(animal instanceof Cat){
-			catList.addLast((Cat)animal);
+			Cat c = (Cat)animal;
+			c.setPosition(counter++);;
+			catList.addLast(c);
 		} else if(animal instanceof Dog){
-			dogList.addLast((Dog)animal);
+			Dog d = (Dog)animal;
+			d.setPosition(counter++);
+			dogList.addLast(d);
 		} else{
 			System.err.println("Incorrect animal for shelter");
 		}
 	}
 	
-	public class Cat extends Animal{
-		private Date myDate;
-		
-		public Cat(){
-			myDate = new Date();
-		}
-		
-		public Date getDate(){
-			return this.myDate;
-		}
-	}
-	
-	public class Dog extends Animal{
-		private Date myDate;
-		
-		public Dog(){
-			myDate = new Date();
-		}
-		
-		public Date getDate(){
-			return this.myDate;
-		}
-	}
-	
-	public class Animal{
-		
-	}
 }
 

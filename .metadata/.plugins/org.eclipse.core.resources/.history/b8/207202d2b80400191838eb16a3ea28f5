@@ -1,0 +1,27 @@
+package chapter3;
+
+import java.util.Date;
+
+import chapter3.Animal;
+
+public class Dog extends Animal{
+	
+	private Date myDate;
+	private String name = null;
+	
+	public Dog(String name){
+		this.name = name;
+	}
+	
+	public Date getDate(){
+		return this.myDate;
+	}
+	
+	public void setDate(){
+		this.myDate = new Date();
+	}
+	
+	public String getName(){
+		return this.name;
+	}
+}
