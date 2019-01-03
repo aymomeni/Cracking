@@ -1,5 +1,9 @@
 package chapter4.Tests;
 
+import static org.junit.Assert.*;
+
+import java.util.LinkedList;
+
 import org.junit.Test;
 
 import chapter4.BiTreeNode;
@@ -16,7 +20,13 @@ public class MinimalTreeTests {
 		
 		BiTreeNode n = mT.createBalancedBiTree(arr);
 		
-		//printInOrderTraversal(n);
+		LinkedList<Integer> l = new LinkedList<Integer>();
+		inOrderTraversal(l, n);
+		
+		int count = 0;
+		for(Integer i : l){
+			assertEquals((int)i, arr[count++]);
+		}
 	}
 	
 	
@@ -29,16 +39,22 @@ public class MinimalTreeTests {
 		
 		BiTreeNode n = mT.createBalancedBiTree(arr);
 		
-		printInOrderTraversal(n);
+		LinkedList<Integer> l = new LinkedList<Integer>();
+		inOrderTraversal(l, n);
+		
+		int count = 0;
+		for(Integer i : l){
+			assertEquals((int)i, arr[count++]);
+		}
 	}
 	
 	
-	private void printInOrderTraversal(BiTreeNode n){
+	private void inOrderTraversal(LinkedList<Integer> l, BiTreeNode n){
 		
 		if(n != null){
-			printInOrderTraversal(n.leftChild);
-			System.out.println(n.val); // vist()
-			printInOrderTraversal(n.rightChild);
+			inOrderTraversal(l, n.leftChild);
+			l.addLast(n.val);
+			inOrderTraversal(l, n.rightChild);
 		}			
 	}
 }
