@@ -3,53 +3,24 @@ package chapter4;
 public class MinimalTree {
 
 	// kind like the opposite of binary search
-	public SimpleBiTree createBalancedBiTree(int[] sortedVals)
+	public BiTreeNode createBalancedBiTree(int[] sortedVals)
 	{
-		SimpleBiTree sB;
+		return createBalancedBiTreeHelper(sortedVals, 0, sortedVals.length-1);
+	}
+	
+	private BiTreeNode createBalancedBiTreeHelper(int[] arr, int startIndex, int endIndex){
 		
-		if(sortedVals.length == 0){
+		if(endIndex < startIndex){
 			return null;
-		} else if(sortedVals.length == 1){
-			sB = new SimpleBiTree();
-			sB.root.val = sortedVals[0];
-			return sB;
 		}
 		
-		// grab the middle element
-		sB = new SimpleBiTree();
-		sB.root.val = sortedVals[sortedVals.length/2];
+		int mid = (startIndex + endIndex)/2;
 		
-		grabSmaller(sB.root, sB, sortedVals, sortedVals.length/4);
-		grabLarger(sB.root, sB, sortedVals, (int)(sortedVals.length*3)/4);
-		return null;
+		BiTreeNode bN = new BiTreeNode(mid);
+		bN.leftChild = createBalancedBiTreeHelper(arr, startIndex, mid-1);
+		bN.rightChild = createBalancedBiTreeHelper(arr, mid+1, endIndex-1);
+		
+		return bN;
 	}
-	
-	private void grabSmaller(BiTreeNode node, SimpleBiTree sB, int[] sortedVals, int smallerMiddleIndex){
-		
-		if(smallerMiddleIndex == 0){
-			node.leftChild = new BiTreeNode();
-			node.leftChild.val = sortedVals[0];
-			return;
-		}
-		
-		node.leftChild = new BiTreeNode();
-		node.leftChild.val = sortedVals[smallerMiddleIndex];
-		grabSmaller(node, sB, sortedVals, smallerMiddleIndex/2);
-		grabLarger(node, sB, sortedVals, smallerMiddleIndex+((smallerMiddleIndex*3)/4));
-		
-	}
-	
-	private void grabLarger(BiTreeNode node, SimpleBiTree sB, int[] sortedVals, int largerMiddleIndex){
-		
-		if(largerMiddleIndex == sortedVals.length-1){
-			node.rightChild = new BiTreeNode();
-			node.rightChild.val = sortedVals[sortedVals.length-1];
-			return;
-		}
-		
-		
-	}
-
-
 
 }

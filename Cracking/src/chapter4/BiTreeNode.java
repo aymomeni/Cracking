@@ -1,7 +1,11 @@
 package chapter4;
 
 public class BiTreeNode {
-	int val = -1;
-	BiTreeNode leftChild;
-	BiTreeNode rightChild;
+	public int val = -1;
+	public BiTreeNode leftChild;
+	public BiTreeNode rightChild;
+	
+	public BiTreeNode(int val){
+		this.val = val;
+	}
 }
