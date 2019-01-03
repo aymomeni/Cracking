@@ -2,6 +2,7 @@ package chapter4.Tests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 import org.junit.Test;
@@ -28,10 +29,9 @@ public class ListOfDepthsTests {
 		
 		
 		ListOfDepths lD = new ListOfDepths();
-		LinkedList<LinkedList<BiTreeNode>> returnList = lD.getListOfDepths(rootNode);
+		ArrayList<LinkedList<BiTreeNode>> returnList = lD.getListOfDepths(rootNode);
 		
-		for(LinkedList<BiTreeNode> list : returnList){
-			
+		for(LinkedList<BiTreeNode> list : returnList){			
 			for(BiTreeNode node : list){
 				System.out.print(node.val + " ");
 			}

@@ -1,57 +1,42 @@
 package chapter4;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class ListOfDepths {
 
 	// BFS approach
-	public LinkedList<LinkedList<BiTreeNode>> getListOfDepths(BiTreeNode root){
+	public ArrayList<LinkedList<BiTreeNode>> getListOfDepths(BiTreeNode root){
 		
 		// check if root is null
 		if(root == null){
 			return null;
 		}
 		
-		LinkedList<LinkedList<BiTreeNode>> returnList = new LinkedList<LinkedList<BiTreeNode>>();
-		LinkedList<BiTreeNode> queue = new LinkedList<BiTreeNode>();
-		root.marked = true;
+		ArrayList<LinkedList<BiTreeNode>> result = new ArrayList<LinkedList<BiTreeNode>>();
+		LinkedList<BiTreeNode> current = new LinkedList<BiTreeNode>();
 		
-		// if root doesn't have descendents
-		if(root.leftChild == null && root.rightChild == null){
-			LinkedList<BiTreeNode> tempList = new LinkedList<BiTreeNode>();
-			tempList.add(root);
-			returnList.addLast(tempList);		
-			return returnList;			
-		}
-		
-		queue.add(root);
-		LinkedList<BiTreeNode> rootList = new LinkedList<BiTreeNode>();
-		rootList.addLast(root);	
-		returnList.addLast(rootList);
-		
-		while(!queue.isEmpty()){
+		current.add(root);
+
+		while(!current.isEmpty()){
 			
-			BiTreeNode node = queue.removeLast();
+			result.add(current);
+			LinkedList<BiTreeNode> parents = current;
+			current = new LinkedList<BiTreeNode>();
 			
-			LinkedList<BiTreeNode> levelList = new LinkedList<BiTreeNode>();
-			
-			if(node.leftChild != null){
-				levelList.addLast(node.leftChild);
-				queue.addLast(node.leftChild);
+			for(BiTreeNode parent: parents){
+				
+				if(parent.leftChild != null){
+					current.addLast(parent.leftChild);
+				}
+					
+				if(parent.rightChild != null){
+					current.addLast(parent.rightChild);
+				} 
 			}
-			
-			if(node.rightChild != null){
-				levelList.addLast(node.rightChild);
-				queue.addLast(node.rightChild);
-			} 
-			
-			if(!levelList.isEmpty()){
-				returnList.addLast(levelList);
-			} else{
-				return returnList;
-			}	
+
 		}		
 		
-		return null;
+		return result;
 	}
 }
