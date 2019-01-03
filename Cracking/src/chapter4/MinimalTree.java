@@ -16,9 +16,9 @@ public class MinimalTree {
 		
 		int mid = (startIndex + endIndex)/2;
 		
-		BiTreeNode bN = new BiTreeNode(mid);
+		BiTreeNode bN = new BiTreeNode(arr[mid]);
 		bN.leftChild = createBalancedBiTreeHelper(arr, startIndex, mid-1);
-		bN.rightChild = createBalancedBiTreeHelper(arr, mid+1, endIndex-1);
+		bN.rightChild = createBalancedBiTreeHelper(arr, mid+1, endIndex);
 		
 		return bN;
 	}

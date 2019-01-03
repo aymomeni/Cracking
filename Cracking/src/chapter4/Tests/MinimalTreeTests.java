@@ -16,18 +16,29 @@ public class MinimalTreeTests {
 		
 		BiTreeNode n = mT.createBalancedBiTree(arr);
 		
+		//printInOrderTraversal(n);
+	}
+	
+	
+	@Test
+	public void test2(){
+		
+		int[] arr = {1, 4, 5, 6, 9};
+		
+		MinimalTree mT = new MinimalTree();
+		
+		BiTreeNode n = mT.createBalancedBiTree(arr);
+		
 		printInOrderTraversal(n);
 	}
 	
 	
 	private void printInOrderTraversal(BiTreeNode n){
 		
-		if(n == null){
-			return;
-		}	
-		printInOrderTraversal(n.leftChild);
-		System.out.println(n.val);
-		printInOrderTraversal(n.rightChild);
-		
+		if(n != null){
+			printInOrderTraversal(n.leftChild);
+			System.out.println(n.val); // vist()
+			printInOrderTraversal(n.rightChild);
+		}			
 	}
 }
