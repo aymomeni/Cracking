@@ -11,9 +11,9 @@ public class ValidateBST {
 		
 		if(root != null){	
 			validateBst(root.leftChild);
-			System.out.println(root.val + "LinkedListSize: " + values.size());
+			//System.out.println(root.val + "LinkedListSize: " + values.size());
 			if(!checkLastValue(root)){
-				System.out.println("Got here too");
+				//System.out.println("Got here too");
 				validate = false;
 			}
 			validateBst(root.rightChild);
@@ -26,12 +26,12 @@ public class ValidateBST {
 		
 		if(!values.isEmpty()){			
 			int lastVal= values.getLast();
-			System.out.println(" LastValue: " + lastVal + " CurrentVal: " + node.val);
+			//System.out.println(" LastValue: " + lastVal + " CurrentVal: " + node.val);
 			if(lastVal < node.val){
 				values.addLast(node.val);
 				return true;
 			} else{
-				System.out.println("Got Here");
+				//System.out.println("Got Here");
 				return false;
 			}
 		}
