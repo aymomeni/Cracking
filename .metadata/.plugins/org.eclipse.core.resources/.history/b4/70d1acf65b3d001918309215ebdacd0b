@@ -1,0 +1,12 @@
+
+public class Event {
+	String id;
+	String name;
+	String created;
+	String duration;
+	String status;
+	String local_date;
+	String local_time;
+	String rsvp_open_offset;
+	
+}
